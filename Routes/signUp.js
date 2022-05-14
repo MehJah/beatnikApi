@@ -6,7 +6,7 @@ authenticate.post('/', async (req, res, next) => {
     try {
         const authData = req.body;
         if (authData.name && authData.email && authData.password && authData.phoneNumber && authData.joinAs && authData.aboutMe) {
-            console.log(authData);
+            // console.log(authData);
             //validating
             try {
                 const result = await db.promise().query(`select * from beatnik_temp where email = '${authData.email}' and phoneNumber = '${authData.phoneNumber}' and isActive = 1`)
